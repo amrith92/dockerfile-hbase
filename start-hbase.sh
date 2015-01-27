@@ -10,7 +10,7 @@
 echo "Starting HBase container"
 rm -rf logs
 mkdir -p logs
-id=$(docker run -d -v $PWD/logs:/opt/hbase/logs -p :2181 -p :9090 -p :60000 -p :60020 -p :60010 --name hbase nolimitid/hbase)
+id=$(docker run -d -v $PWD/logs:/opt/hbase/logs -p 2181:2181 -p 9090:9090 -p 60000:60000 -p 60020:60020 -p 60010:60010 --name hbase nolimitid/hbase)
 
 echo "Container has ID $id"
 
