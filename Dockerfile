@@ -20,8 +20,8 @@ RUN apt-get install -y build-essential curl openjdk-7-jdk
 ENV HBASE_VERSION 0.98.6
 
 RUN mkdir -p /opt/downloads && cd /opt/downloads && curl -SsfLO "http://archive.apache.org/dist/hbase/hbase-$HBASE_VERSION/hbase-$HBASE_VERSION-hadoop2-bin.tar.gz"
-RUN cd /opt && tar xvfz /opt/downloads/hbase-$HBASE_VERSION.tar.gz
-RUN mv /opt/hbase-$HBASE_VERSION /opt/hbase
+RUN cd /opt && tar xvfz /opt/downloads/hbase-$HBASE_VERSION-hadoop2-bin.tar.gz
+RUN mv /opt/hbase-$HBASE_VERSION-hadoop2-bin /opt/hbase
 
 # Data will go here (see hbase-site.xml)
 RUN mkdir -p /data/hbase /opt/hbase/logs
